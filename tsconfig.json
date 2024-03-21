@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es2020",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+        "lib": ["dom", "dom.iterable", "esnext"],            /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+        //import React from 'react'를 쓰지 않기 위해 jsx를 "react"로 설정하지 않음.
+        "jsx": "react-jsx",                                     /* Specify what JSX code is generated. */
+        "module": "esnext",                                /* Specify what module code is generated. */
+        "moduleResolution": "bundler",                        /* Specify how TypeScript looks up a file from a given module specifier. */
+        "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+        "paths": {
+          "app/*": ["src/app/*"],
+          "assets/*": ["public/assets/*"],
+          "shared/*": ["src/shared/*"],
+          "tests/*": ["tests/*"]
+        },                                      
+        "typeRoots": ["./node_modules/@types"],                                  /* Specify multiple folders that act like './node_modules/@types'. */
+        "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+      "skipLibCheck": true ,                                /* Skip type checking all .d.ts files. */
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "build", "dist"]
+  }
