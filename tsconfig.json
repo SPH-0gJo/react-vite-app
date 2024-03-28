@@ -15,7 +15,8 @@
       "app/*": ["src/app/*"],
       "assets/*": ["public/assets/*"],
       "shared/*": ["src/shared/*"],
-      "tests/*": ["tests/*"]
+      "tests/*": ["tests/*"],
+      "mock/*": ["src/mock/*"]
     },
     "typeRoots": ["./node_modules/@types"] /* Specify multiple folders that act like './node_modules/@types'. */,
     "allowJs": true /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */,
