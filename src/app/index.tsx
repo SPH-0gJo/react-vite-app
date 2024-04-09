@@ -1,11 +1,4 @@
 import ReactDOM from 'react-dom';
+import { App } from './containers/App';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello, React-Vite-App</h1>
-    </div>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById('wrapper'));
+ReactDOM.render(<App />, document.getElementById('app'));
