@@ -1,0 +1,88 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+:root {
+  --font-primary: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --text-style: normal;
+  /* weight */
+  --text-weight-light: 300;
+  --text-weight-normal: 400;
+  --text-weight-semibold: 500;
+  --text-weight-bold: 700;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-style: var(--text-style);
+}
+
+h1, .h1 {
+  font-size: 3.5rem;
+  line-height: 4.5rem;
+  font-weight: var(--text-weight-semibold);
+}
+
+h2, .h2 {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: var(--text-weight-semibold);
+}
+
+h3, .h3 {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: var(--text-weight-semibold);
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: var(--text-weight-semibold);
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+  font-weight: var(--text-weight-semibold);
+}
+
+h6, .h6 {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: var(--text-weight-semibold);
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: var(--text-weight-semibold);
+  line-height: 1.75rem;
+}
+
+.subtitle_sm {
+  font-size: 0.875rem;
+  font-weight: var(--text-weight-semibold);
+  line-height: 1.5rem;
+}
+
+.body {
+  font-size: 1rem;
+  font-weight: var(--text-weight-normal);
+  line-height: 1.625rem;
+}
+
+.body_sm {
+  font-size: 0.875rem;
+  font-weight: var(--text-weight-normal);
+  line-height: 1.375rem;
+}
+
+.caption {
+  font-size: 0.75rem;
+  font-weight: var(--text-weight-normal);
+  line-height: 1.25rem;
+}
+
+.caption_sm {
+  font-size: 0.625rem;
+  font-weight: var(--text-weight-normal);
+  line-height: 1.125rem;
+}
