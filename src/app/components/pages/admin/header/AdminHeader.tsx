@@ -12,6 +12,12 @@ const BurgerButton = styled.button`
   color: #313a46;
   // padding: 0 20px;
   display: inline-block;
+  em {
+    &:hover {
+      color: var(--light-primary-origin);
+    }
+    transition: color 0.3s ease;
+  }
 `;
 
 export const AdminHeader = (props: AdminHeaderProps) => {
