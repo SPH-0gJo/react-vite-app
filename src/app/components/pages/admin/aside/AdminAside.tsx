@@ -1,5 +1,9 @@
 import { useNavigate } from 'react-router-dom';
+import { AdminMenuItems } from 'shared/constants/types/types';
 import styled from 'styled-components';
+import { AdminMenuBox } from './AdminMenuBox';
+import { useCallback, useLayoutEffect, useState } from 'react';
+import { AdminMenuBoxNoSubMenus } from './AdminMenuBoxNoSubMenus';
 
 const Aside = styled.aside`
   font-family: var(--font-primary);
@@ -37,28 +41,72 @@ const AsideFooter = styled.div`
   margin-top: auto;
 `;
 
-interface AdminAsideProps {
-  isMenuOpen: boolean;
+interface AdminAsideData {
+  menuItems: AdminMenuItems[];
 }
 
-export const AdminAside = ({ isMenuOpen }: AdminAsideProps) => {
+interface AdminAsideProps {
+  isMenuOpen: boolean;
+  data: AdminAsideData;
+}
+
+const getHasSubMenus = function (menuItem: AdminMenuItems) {
+  const { children } = menuItem;
+  // children이 빈 배열인 경우
+  if (Array.isArray(children) && !children.length) {
+    return false;
+  }
+  return !!children;
+};
+
+export const AdminAside = ({ isMenuOpen, data: { menuItems } }: AdminAsideProps) => {
   const navigator = useNavigate();
   //const { menuItems } = props.data;
+  const [activeMenu, setActiveMenu] = useState<number>(null);
+
+  useLayoutEffect(() => {
+    if (menuItems.length > 0) {
+      setActiveMenu(menuItems[0].id);
+    }
+  }, [menuItems]);
+
+  const handleMenuBoxNoSubMenusClick = useCallback((id: number) => {
+    setActiveMenu(id);
+  }, []);
+
   return (
     <Aside>
       <AsideHeader onClick={() => navigator('/')}>
         {isMenuOpen && <img src='/assets/images/logo.svg' alt='Logo' />}
         {/* <span>GEOLAB</span> */}
       </AsideHeader>
-      <MenuItemBar>
-        {/* <MenuItems className={'h6'}>
+      {isMenuOpen && (
+        <MenuItemBar>
+          <MenuItems className={'h6'}>
             {menuItems.map((menuItem) => {
-              const { id, children } = menuItem;
-              if (!children) return;
-              return <GeolabMenuBox data={{ menuItem }} key={id} />;
+              const { id } = menuItem;
+              if (!getHasSubMenus(menuItem)) {
+                return (
+                  <AdminMenuBoxNoSubMenus
+                    data={{ menuItem }}
+                    key={id}
+                    isActive={activeMenu === id}
+                    onClick={handleMenuBoxNoSubMenusClick}
+                  />
+                );
+              }
+              return (
+                <AdminMenuBox
+                  data={{ menuItem }}
+                  key={id}
+                  activeMenu={activeMenu}
+                  onSubMenuClick={handleMenuBoxNoSubMenusClick}
+                />
+              );
             })}
-          </MenuItems> */}
-      </MenuItemBar>
+          </MenuItems>
+        </MenuItemBar>
+      )}
       {isMenuOpen && (
         <AsideFooter className={'caption'}>
           <p>담당자:&nbsp;유경수</p>

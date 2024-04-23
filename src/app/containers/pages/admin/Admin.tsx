@@ -3,14 +3,14 @@ import { AdminContents } from 'app/components/pages/admin/contents/AdminContents
 import { AdminHeader } from 'app/components/pages/admin/header/AdminHeader';
 import { useCallback, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { MENU_ITEMS } from 'shared/constants/variables';
 import styled from 'styled-components';
 
-const LandingPage = styled.div<{ isMenuOpen: boolean }>`
+const LandingPage = styled.div<{ $isMenuOpen: boolean }>`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: ${({ isMenuOpen }) => (isMenuOpen ? '21.25rem 1fr' : '5rem 1fr')};
-  //grid-template-columns: 21.25rem 1fr;
+  grid-template-columns: ${({ $isMenuOpen }) => ($isMenuOpen ? '21.25rem 1fr' : '5rem 1fr')};
   grid-template-rows: 5.625rem 1fr;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -27,9 +27,9 @@ export const Admin = () => {
   }, []);
 
   return (
-    <LandingPage isMenuOpen={isMenuOpen}>
+    <LandingPage $isMenuOpen={isMenuOpen}>
       <AdminHeader onBurgerBtnClick={toggleMenu} />
-      <AdminAside isMenuOpen={isMenuOpen} />
+      <AdminAside isMenuOpen={isMenuOpen} data={{ menuItems: MENU_ITEMS }} />
       <AdminContents>
         <Outlet />
       </AdminContents>
