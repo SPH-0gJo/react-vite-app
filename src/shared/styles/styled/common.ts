@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   background-color: var(--white-a100);
-  height: 5.625rem;
+  height: 3.625rem;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
   grid-area: header;
   display: flex;

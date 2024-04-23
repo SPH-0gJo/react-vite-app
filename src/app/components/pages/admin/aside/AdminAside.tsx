@@ -18,11 +18,16 @@ const Aside = styled.aside`
 
 const AsideHeader = styled.div`
   cursor: pointer;
-  height: 5.625rem;
+  height: 3.625rem;
   color: var(--dark-text-primary);
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 0.3rem 0;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
 `;
 
 const MenuItemBar = styled.div`
@@ -61,7 +66,6 @@ const getHasSubMenus = function (menuItem: AdminMenuItems) {
 
 export const AdminAside = ({ isMenuOpen, data: { menuItems } }: AdminAsideProps) => {
   const navigator = useNavigate();
-  //const { menuItems } = props.data;
   const [activeMenu, setActiveMenu] = useState<number>(null);
 
   useLayoutEffect(() => {
@@ -78,7 +82,6 @@ export const AdminAside = ({ isMenuOpen, data: { menuItems } }: AdminAsideProps)
     <Aside>
       <AsideHeader onClick={() => navigator('/')}>
         {isMenuOpen && <img src='/assets/images/logo.svg' alt='Logo' />}
-        {/* <span>GEOLAB</span> */}
       </AsideHeader>
       {isMenuOpen && (
         <MenuItemBar>

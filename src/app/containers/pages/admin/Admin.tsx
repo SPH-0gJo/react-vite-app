@@ -11,7 +11,7 @@ const LandingPage = styled.div<{ $isMenuOpen: boolean }>`
   height: 100%;
   display: grid;
   grid-template-columns: ${({ $isMenuOpen }) => ($isMenuOpen ? '21.25rem 1fr' : '5rem 1fr')};
-  grid-template-rows: 5.625rem 1fr;
+  grid-template-rows: 3.625rem 1fr;
   overflow-x: hidden;
   overflow-y: hidden;
   grid-template-areas:
