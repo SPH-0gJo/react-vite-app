@@ -19,9 +19,7 @@ export const Profile = () => {
   return (
     <Dropdown>
       <DropdownToggle>
-        <span>
-          <ProfileImg src='/assets/images/favicon.png' />
-        </span>
+        <ProfileImg src='/assets/images/favicon.png' />
       </DropdownToggle>
       <DropdownMenu StyleComponent={ProfileDropdownBox}>
         <Link to=''>프로필</Link>

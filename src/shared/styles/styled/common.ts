@@ -36,6 +36,15 @@ export const HeaderItems = styled.div`
   align-items: center;
 `;
 
+export const HeaderItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  width: 36px;
+`;
+
 export const DropdownBox = styled.div`
   position: relative;
 `;

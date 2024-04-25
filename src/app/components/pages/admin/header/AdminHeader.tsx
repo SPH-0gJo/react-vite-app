@@ -1,6 +1,7 @@
-import { Header, HeaderInner, HeaderItems } from 'shared/styles/styled/common';
+import { Header, HeaderInner, HeaderItem, HeaderItems } from 'shared/styles/styled/common';
 import styled from 'styled-components';
-import { Profile } from '../Profile';
+import { Profile } from './items/Profile';
+import { Notify } from './items/Notify';
 
 interface AdminHeaderProps {
   setInputText?: (text: string | undefined) => void;
@@ -21,24 +22,34 @@ const BurgerButton = styled.button`
   }
 `;
 
+const AdminHeaderItems = styled(HeaderItems)`
+  &.right-header-items > div {
+    border-radius: 50% !important;
+    border: 1px solid grey;
+  }
+`;
+
 export const AdminHeader = (props: AdminHeaderProps) => {
   const { setInputText, onBurgerBtnClick } = props;
   return (
     <Header>
       <HeaderInner>
         <HeaderItems>
-          <div className='header-item'>
+          <HeaderItem>
             <BurgerButton onClick={onBurgerBtnClick}>
               <em className='icon-burger-menu' />
             </BurgerButton>
-          </div>
+          </HeaderItem>
           {/* {setInputText && <Search setInputText={(text) => setInputText(text)} />} */}
         </HeaderItems>
-        <HeaderItems>
-          <div className='header-item'>
+        <AdminHeaderItems className='right-header-items'>
+          <HeaderItem>
+            <Notify />
+          </HeaderItem>
+          <HeaderItem>
             <Profile />
-          </div>
-        </HeaderItems>
+          </HeaderItem>
+        </AdminHeaderItems>
       </HeaderInner>
     </Header>
   );
