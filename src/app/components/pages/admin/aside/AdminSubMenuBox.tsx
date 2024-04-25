@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AdminMenuBoxNoSubMenusProps } from './AdminMenuBoxNoSubMenus';
 import styled, { css } from 'styled-components';
-import { StyledProps } from './AdminMenuBox';
+import { StyledProps } from 'shared/styles/styled/common';
 
 const SubMenuItem = styled.li<StyledProps>`
   cursor: pointer;

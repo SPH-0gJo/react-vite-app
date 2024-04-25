@@ -1,5 +1,6 @@
-import { Header } from 'shared/styles/styled/common';
+import { Header, HeaderInner, HeaderItems } from 'shared/styles/styled/common';
 import styled from 'styled-components';
+import { Profile } from '../Profile';
 
 interface AdminHeaderProps {
   setInputText?: (text: string | undefined) => void;
@@ -24,10 +25,21 @@ export const AdminHeader = (props: AdminHeaderProps) => {
   const { setInputText, onBurgerBtnClick } = props;
   return (
     <Header>
-      <BurgerButton onClick={onBurgerBtnClick}>
-        <em className='icon-burger-menu' />
-      </BurgerButton>
-      {/* {setInputText && <Search setInputText={(text) => setInputText(text)} />} */}
+      <HeaderInner>
+        <HeaderItems>
+          <div className='header-item'>
+            <BurgerButton onClick={onBurgerBtnClick}>
+              <em className='icon-burger-menu' />
+            </BurgerButton>
+          </div>
+          {/* {setInputText && <Search setInputText={(text) => setInputText(text)} />} */}
+        </HeaderItems>
+        <HeaderItems>
+          <div className='header-item'>
+            <Profile />
+          </div>
+        </HeaderItems>
+      </HeaderInner>
     </Header>
   );
 };

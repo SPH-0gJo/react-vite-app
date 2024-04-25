@@ -2,11 +2,7 @@ import { useLayoutEffect, useState } from 'react';
 import { AdminMenu, AdminMenuItems } from 'shared/constants/types/types';
 import styled from 'styled-components';
 import { AdminSubMenuBox } from './AdminSubMenuBox';
-
-export interface StyledProps {
-  $isActive?: boolean;
-  disabled?: boolean;
-}
+import { StyledProps } from 'shared/styles/styled/common';
 
 export const MenuTitle = styled.section<StyledProps>`
   color: ${(props) => (props.$isActive ? 'var(--dark-text-primary)' : 'var(--dark-text-secondary)')};
