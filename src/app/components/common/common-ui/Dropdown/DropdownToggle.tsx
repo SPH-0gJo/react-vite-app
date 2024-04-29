@@ -13,7 +13,7 @@ export const DropdownToggle = ({ children }: DropdownToggleProps) => {
     <button
       type='button'
       onClick={onToggle}
-      style={{ border: '1px solid transparent', backgroundColor: 'transparent' }}
+      style={{ border: 'none', backgroundColor: 'transparent', display: 'flex' }}
     >
       {children}
     </button>
