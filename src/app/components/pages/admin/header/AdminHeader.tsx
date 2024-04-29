@@ -25,7 +25,7 @@ const BurgerButton = styled.button`
 const AdminHeaderItems = styled(HeaderItems)`
   &.right-header-items > div {
     border-radius: 50% !important;
-    border: 1px solid grey;
+    border: 1.5px solid #ccc;
   }
 `;
 

@@ -43,6 +43,8 @@ export const HeaderItem = styled.div`
 
   height: 36px;
   width: 36px;
+
+  margin: 0px 3px;
 `;
 
 export const DropdownBox = styled.div`
