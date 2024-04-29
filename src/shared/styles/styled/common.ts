@@ -62,6 +62,8 @@ export const DropdownMenuBox = styled.div<StyledProps>`
   background-color: white;
   border: solid 1px black;
 
+  margin-top: 7px;
+
   a {
     display: block;
     width: 100%; /* DropdownMenu의 width에 맞추고, 없는 경우 가장 긴 문자 기준 */
