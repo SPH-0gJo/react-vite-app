@@ -1,3 +1,4 @@
+import { CDropdown } from 'app/components/common/common-ui/CDropdown/CDropdown';
 import { Dropdown } from 'app/components/common/common-ui/Dropdown/Dropdown';
 import { DropdownMenu } from 'app/components/common/common-ui/Dropdown/DropdownMenu';
 import { DropdownToggle } from 'app/components/common/common-ui/Dropdown/DropdownToggle';
@@ -17,7 +18,7 @@ const ProfileDropdownBox = styled(DropdownMenuBox)`
 
 export const Profile = () => {
   return (
-    <Dropdown>
+    <CDropdown dropdownId='dropdown-profile'>
       <DropdownToggle>
         <ProfileImg src='/assets/images/favicon.png' />
       </DropdownToggle>
@@ -25,6 +26,6 @@ export const Profile = () => {
         <Link to=''>프로필</Link>
         <Link to=''>설정</Link>
       </DropdownMenu>
-    </Dropdown>
+    </CDropdown>
   );
 };
